@@ -14,9 +14,9 @@ terraform {
   #    path = "./connectivity.tfstate"
   #  }
   backend "azurerm" {
-    resource_group_name  = "rg-dev-tfstate"
-    storage_account_name = "stadevtfstate"
-    container_name       = "atlz-dev-connectivity"
+    resource_group_name  = "rg-platform-tfstate"
+    storage_account_name = "staplatformtfstate"
+    container_name       = "platform-tfstate"
     key                  = "connectivity.tfstate"
     # access_key is provided via environment variable ARM_ACCESS_KEY
   }

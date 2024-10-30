@@ -3,7 +3,7 @@
 variable "root_id" {
   type        = string
   description = "Sets the value used for generating unique resource naming within the module."
-  default     = "atlz-dev"
+  default     = "core-platform"
 }
 
 variable "primary_location" {
@@ -21,7 +21,7 @@ variable "secondary_location" {
 variable "subscription_id_connectivity" {
   type        = string
   description = "Subscription ID to use for \"connectivity\" resources."
-  default     = "6e06f118-5146-4357-a5cc-7329340def38"
+  default     = "d6e967f0-227a-4bd3-ac94-6756273270cc"
 }
 
 variable "enable_ddos_protection" {

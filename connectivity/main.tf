@@ -52,7 +52,7 @@ module "alz" {
   # Base module configuration settings
   #root_parent_id   = data.azurerm_client_config.current.tenant_id
   #root_id          = var.root_id
-  root_parent_id   = "20ead862-19d8-4495-94e5-366875e455a7"
+  root_parent_id   = "e061f8b7-caf3-45f2-a8bc-491cea9e64aa"
   root_id          = var.root_id
   default_location = "westeurope"
 

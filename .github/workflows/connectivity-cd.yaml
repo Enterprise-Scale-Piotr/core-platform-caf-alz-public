@@ -1,4 +1,4 @@
-name: 'Connectivity-CD'
+name: '02-Connectivity-CD'
 
 on:
   push:

@@ -25,8 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
     environment: atlz-dev-plan
+    defaults:
+      run:
+        shell: bash
+        working-directory: './connectivity'
     permissions:
-      id-token: write
+      #id-token: write
       contents: read
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -76,6 +80,10 @@ jobs:
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
     environment: atlz-dev-apply
+    defaults:
+      run:
+        shell: bash
+        working-directory: './connectivity'
     permissions:
       #id-token: write
       contents: read

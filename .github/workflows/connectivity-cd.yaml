@@ -28,7 +28,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: './connectivity'
+        working-directory: 'connectivity'
     permissions:
       #id-token: write
       contents: read

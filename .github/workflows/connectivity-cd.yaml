@@ -28,7 +28,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: 'connectivity'
+        working-directory: './connectivity'
     permissions:
       #id-token: write
       contents: read
@@ -80,10 +80,10 @@ jobs:
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
     environment: atlz-dev-apply
-    defaults:
-      run:
-        shell: bash
-        working-directory: './connectivity'
+    #defaults:
+    #  run:
+    #    shell: bash
+    #    working-directory: './connectivity'
     permissions:
       #id-token: write
       contents: read

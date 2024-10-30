@@ -14,6 +14,8 @@ terraform {
   #    path = "./connectivity.tfstate"
   #  }
   backend "azurerm" {
+    tenant_id            = "e061f8b7-caf3-45f2-a8bc-491cea9e64aa"
+    subscription_id      = "004b5dd3-9bf5-49d6-9236-f01d6b533dea"
     resource_group_name  = "rg-platform-tfstate"
     storage_account_name = "staplatformtfstate"
     container_name       = "platform-tfstate"

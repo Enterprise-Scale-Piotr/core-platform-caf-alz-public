@@ -7,9 +7,9 @@ data "terraform_remote_state" "connectivity" {
 
   config = {
     #  path = "${path.module}/../connectivity/connectivity.tfstate"
-    resource_group_name  = "rg-dev-tfstate"
-    storage_account_name = "stadevtfstate"
-    container_name       = "atlz-dev-connectivity"
+    resource_group_name  = "rg-platform-tfstate"
+    storage_account_name = "staplatformtfstate"
+    container_name       = "platform-tfstate"
     key                  = "connectivity.tfstate"
   }
 }
@@ -20,9 +20,9 @@ data "terraform_remote_state" "management" {
 
   config = {
     #  path = "${path.module}/../management/management.tfstate"
-    resource_group_name  = "rg-dev-tfstate"
-    storage_account_name = "stadevtfstate"
-    container_name       = "atlz-dev-management"
+    resource_group_name  = "rg-platform-tfstate"
+    storage_account_name = "staplatformtfstate"
+    container_name       = "platform-tfstate"
     key                  = "management.tfstate"
   }
 }
@@ -32,9 +32,9 @@ data "terraform_remote_state" "core" {
 
   config = {
     #  path = "${path.module}/../core/core.tfstate"
-    resource_group_name  = "rg-dev-tfstate"
-    storage_account_name = "stadevtfstate"
-    container_name       = "atlz-dev-core"
+    resource_group_name  = "rg-platform-tfstate"
+    storage_account_name = "staplatformtfstate"
+    container_name       = "platform-tfstate"
     key                  = "core.tfstate"
   }
 }

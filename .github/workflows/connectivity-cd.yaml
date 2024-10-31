@@ -71,6 +71,9 @@ jobs:
           name: module
           path: ./connectivity/staging/
 
+      - name: Env Check
+        run: pwd && ls
+
       - name: Show the Plan for Review
         run: terraform show tfplan
 
@@ -83,7 +86,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: './connectivity'
+        working-directory: 'connectivity'
     permissions:
       #id-token: write
       contents: read

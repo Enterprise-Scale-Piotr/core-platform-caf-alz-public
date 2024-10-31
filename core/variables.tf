@@ -9,7 +9,7 @@ variable "root_id" {
 variable "root_name" {
   type        = string
   description = "Sets the value used for the \"intermediate root\" management group display name."
-  default     = "ALZ Code Platform"
+  default     = "ALZ Core Platform"
 }
 
 variable "primary_location" {

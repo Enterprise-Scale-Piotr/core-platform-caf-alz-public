@@ -69,7 +69,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: module
-          path: ./connectivity/staging/
+          path: ./connectivity/
+          #path: ./connectivity/staging/
 
       - name: Env Check
         run: pwd && ls

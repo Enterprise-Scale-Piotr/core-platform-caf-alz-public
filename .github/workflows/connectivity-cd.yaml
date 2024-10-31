@@ -111,8 +111,8 @@ jobs:
         with:
           terraform_wrapper: false
 
-      - name: Env Check
-        run: pwd && ls
+      #- name: Env Check
+      #  run: pwd && ls
 
       - name: Terraform Init
         run: terraform init

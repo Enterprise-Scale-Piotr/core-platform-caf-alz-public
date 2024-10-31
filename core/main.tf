@@ -5,16 +5,18 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 3.96.0"
     }
   }
-#  backend "local" {
-#    path = "./core.tfstate"
-#  }
+  #  backend "local" {
+  #    path = "./core.tfstate"
+  #  }
   backend "azurerm" {
-    resource_group_name  = "rg-dev-tfstate"
-    storage_account_name = "stadevtfstate"
-    container_name       = "atlz-dev-core"
+    tenant_id            = "e061f8b7-caf3-45f2-a8bc-491cea9e64aa"
+    subscription_id      = "004b5dd3-9bf5-49d6-9236-f01d6b533dea" #management subscription id for remote tfstate blob
+    resource_group_name  = "rg-platform-tfstate"
+    storage_account_name = "staplatformtfstate"
+    container_name       = "platform-tfstate"
     key                  = "core.tfstate"
   }
 }
@@ -38,7 +40,7 @@ module "alz" {
   # and uncomment the remote `source` and `version` below.
   # source = "../../../"
   source  = "Azure/caf-enterprise-scale/azurerm"
-  version = "3.1.2"
+  version = "4.2.0"
 
   providers = {
     azurerm              = azurerm

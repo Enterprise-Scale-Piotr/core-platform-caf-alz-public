@@ -3,29 +3,29 @@
 variable "root_id" {
   type        = string
   description = "Sets the value used for generating unique resource naming within the module."
-  default     = "atlz-dev"
+  default     = "core-platform"
 }
 
 variable "root_name" {
   type        = string
   description = "Sets the value used for the \"intermediate root\" management group display name."
-  default     = "ATLZ CAF Dev"
+  default     = "ALZ Code Platform"
 }
 
 variable "primary_location" {
   type        = string
   description = "Sets the location for \"primary\" resources to be created in."
-  default     = "northeurope"
+  default     = "westeurope"
 }
 
 variable "secondary_location" {
   type        = string
   description = "Sets the location for \"secondary\" resources to be created in."
-  default     = "westeurope"
+  default     = "northeurope"
 }
 
 variable "subscription_id_identity" {
   type        = string
   description = "Subscription ID to use for \"identity\" resources."
-  default     = "eb15c64e-3fe2-48d5-9c1b-76a43eae3f12"
+  default     = "9571ea20-46ee-4687-a1b5-61abf1742bcc"
 }

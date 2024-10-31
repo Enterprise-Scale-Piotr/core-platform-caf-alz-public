@@ -80,10 +80,10 @@ jobs:
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
     environment: atlz-dev-apply
-    #defaults:
-    #  run:
-    #    shell: bash
-    #    working-directory: './connectivity'
+    defaults:
+      run:
+        shell: bash
+        working-directory: './connectivity'
     permissions:
       #id-token: write
       contents: read
@@ -108,7 +108,7 @@ jobs:
           terraform_wrapper: false
 
       - name: Env Check
-        run: pwd
+        run: pwd && ls
 
       - name: Terraform Init
         run: terraform init

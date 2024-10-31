@@ -72,8 +72,8 @@ jobs:
           path: ./connectivity/
           #path: ./connectivity/staging/
 
-      - name: Env Check
-        run: pwd && ls
+      #- name: Env Check
+      #  run: pwd && ls
 
       - name: Show the Plan for Review
         run: terraform show tfplan

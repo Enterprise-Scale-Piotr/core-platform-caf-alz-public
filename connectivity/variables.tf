@@ -6,6 +6,11 @@ variable "root_id" {
   default     = "core-platform"
 }
 
+variable "connectivity_resources_location" {
+  type    = string
+  default = "westeurope"
+}
+
 variable "primary_location" {
   type        = string
   description = "Sets the location for \"primary\" resources to be created in."
@@ -34,7 +39,7 @@ variable "connectivity_resources_tags" {
   type        = map(string)
   description = "Specify tags to add to \"connectivity\" resources."
   default = {
-    deployedBy = "terraform/azure/caf-enterprise-scale/examples/l400-multi"
-    demo_type  = "Deploy connectivity resources using multiple module declarations"
+    deployedBy = "core_platform_connectivity"
+    demo_type  = "deploy_connectivity_resources_custom"
   }
 }

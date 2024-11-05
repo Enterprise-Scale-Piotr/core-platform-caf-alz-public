@@ -17,7 +17,7 @@ locals {
               config = {
                 address_prefix = "10.100.1.0/24"
                 #gateway_sku_expressroute = "ErGw2AZ"
-                gateway_sku_vpn = ""
+                gateway_sku_vpn = "basic"
                 advanced_vpn_settings = {
                   enable_bgp                       = null
                   active_active                    = null
@@ -66,7 +66,7 @@ locals {
               config = {
                 address_prefix = "10.101.1.0/24"
                 #gateway_sku_expressroute = ""
-                gateway_sku_vpn = "VpnGw2AZ"
+                gateway_sku_vpn = "basic"
                 advanced_vpn_settings = {
                   enable_bgp                       = null
                   active_active                    = null

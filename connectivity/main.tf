@@ -62,7 +62,7 @@ module "alz" {
   deploy_core_landing_zones = false
 
   # Configuration settings for connectivity resources
-  deploy_connectivity_resources    = true
+  deploy_connectivity_resources    = var.deploy_connectivity_resources
   configure_connectivity_resources = local.configure_connectivity_resources
   subscription_id_connectivity     = var.subscription_id_connectivity
 

@@ -6,6 +6,11 @@ variable "root_id" {
   default     = "core-platform"
 }
 
+variable "deploy_connectivity_resources" {
+  type    = bool
+  default = true
+}
+
 variable "connectivity_resources_location" {
   type    = string
   default = "westeurope"

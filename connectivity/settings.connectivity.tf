@@ -29,6 +29,7 @@ locals {
                 }
               }
             }
+            /*
             azure_firewall = {
               enabled = true
               config = {
@@ -47,6 +48,7 @@ locals {
                 }
               }
             }
+            */
             spoke_virtual_network_resource_ids      = []
             enable_outbound_virtual_network_peering = true
             enable_hub_network_mesh_peering         = false
@@ -66,7 +68,7 @@ locals {
               config = {
                 address_prefix = "10.101.1.0/24"
                 #gateway_sku_expressroute = ""
-                gateway_sku_vpn = "basic"
+                gateway_sku_vpn = ""
                 advanced_vpn_settings = {
                   enable_bgp                       = null
                   active_active                    = null
@@ -78,6 +80,7 @@ locals {
                 }
               }
             }
+            /*
             azure_firewall = {
               enabled = false
               config = {
@@ -96,6 +99,7 @@ locals {
                 }
               }
             }
+            */
             spoke_virtual_network_resource_ids      = []
             enable_outbound_virtual_network_peering = true
             enable_hub_network_mesh_peering         = false
@@ -104,7 +108,7 @@ locals {
       ]
       vwan_hub_networks = []
       ddos_protection_plan = {
-        enabled = false
+        enabled = true
         config = {
           location = "westeurope"
         }

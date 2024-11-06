@@ -17,7 +17,7 @@ locals {
               config = {
                 address_prefix = "10.100.1.0/24"
                 #gateway_sku_expressroute = "ErGw2AZ"
-                gateway_sku_vpn = "basic"
+                gateway_sku_vpn = "Basic"
                 advanced_vpn_settings = {
                   enable_bgp                       = null
                   active_active                    = null

@@ -108,7 +108,7 @@ locals {
       ]
       vwan_hub_networks = []
       ddos_protection_plan = {
-        enabled = true
+        enabled = false
         config = {
           location = "westeurope"
         }

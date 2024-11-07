@@ -56,11 +56,11 @@ jobs:
       id: plan
       run: terraform plan -out tf.plan
       continue-on-error: true
-    - run: terraform show -json terraform.plan
+    - run: terraform show -json tf.plan
       id: show
 
     - run: |
-        cat > terraform.json << 'EOM'
+        cat > tf.json << 'EOM'
         ${{ steps.show.outputs.stdout }}
         EOM
 

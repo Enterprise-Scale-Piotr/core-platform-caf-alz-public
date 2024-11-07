@@ -9,7 +9,7 @@ terraform {
       version = "~> 3.107.0"
     }
   }
-
+  required_version = "~> 1.7.0"
   #  backend "local" {
   #    path = "./connectivity.tfstate"
   #  }

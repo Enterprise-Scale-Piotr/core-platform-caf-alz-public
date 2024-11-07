@@ -72,9 +72,9 @@ module "alz" {
   # resources created by the connectivity module instance and
   # to map the subscription to the correct management group,
   # but no resources are created by this module instance
-  deploy_connectivity_resources    = false
-  configure_connectivity_resources = data.terraform_remote_state.connectivity.outputs.configuration
-  subscription_id_connectivity     = data.terraform_remote_state.connectivity.outputs.subscription_id_connectivity
+  deploy_connectivity_resources = false
+  #configure_connectivity_resources = data.terraform_remote_state.connectivity.outputs.configuration
+  #subscription_id_connectivity     = data.terraform_remote_state.connectivity.outputs.subscription_id_connectivity
 
   # The following inputs ensure that managed parameters are
   # configured correctly for policies relating to management

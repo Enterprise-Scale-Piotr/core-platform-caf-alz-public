@@ -54,7 +54,7 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      working-directory: ${{ inputs.working_directory }}
+      #working-directory: ${{ inputs.working_directory }}
       run: terraform plan -out tf.plan -no-color
       continue-on-error: true
 
@@ -68,7 +68,6 @@ jobs:
 
             // Get the terraform plan output
             const planOutput = execSync('terraform show -no-color tf.plan', {
-              cwd: '${{ inputs.working_directory }}'
             }).toString();
 
             const {data: comments} = await github.rest.issues.listComments({

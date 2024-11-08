@@ -18,7 +18,7 @@ jobs:
       id-token: write
       contents: read
       pull-requests: write
-    uses: ./.github/workflows/template-ci.yaml@main
+    uses: Enterprise-Scale-Piotr/core-platform-caf-alz-public/.github/workflows/template-ci.yaml@main
     with:
       gh_workflow: management
     secrets: inherit

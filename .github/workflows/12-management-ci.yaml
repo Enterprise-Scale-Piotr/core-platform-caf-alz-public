@@ -1,4 +1,3 @@
----
 name: 12-Management-CI
 on:
   pull_request:

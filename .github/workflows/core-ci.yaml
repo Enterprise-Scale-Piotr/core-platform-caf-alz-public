@@ -57,13 +57,8 @@ jobs:
       id: plan
       run: terraform plan -out tf.plan
       continue-on-error: true
-    - run: terraform show -json tf.plan
+    - run: terraform show -json tf.plan | tee terraform.json
       id: show
-
-    - run: |
-        cat > tf.json << 'EOM'
-        ${{ steps.show.outputs.stdout }}
-        EOM
 
     - name: Update Pull Request
       uses: actions/github-script@v6

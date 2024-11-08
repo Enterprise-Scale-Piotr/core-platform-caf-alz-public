@@ -1,10 +1,10 @@
 name: 12-Management-CI
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+    #types:
+    #  - opened
+    #  - reopened
+    #  - synchronize
     branches:
       - main
     paths:

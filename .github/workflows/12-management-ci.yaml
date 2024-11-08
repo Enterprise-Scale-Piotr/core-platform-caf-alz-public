@@ -1,0 +1,25 @@
+---
+name: 12-Management-CI
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - main
+    paths:
+      - "12-management/**"
+  workflow_dispatch:
+
+jobs:
+  validate_and_plan:
+    name: "CI"
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    uses: ./.github/workflows/template-ci.yaml@main
+    with:
+      gh_workflow: 12-management
+    secrets: inherit

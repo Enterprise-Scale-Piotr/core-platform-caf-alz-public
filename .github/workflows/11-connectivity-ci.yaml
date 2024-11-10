@@ -1,0 +1,24 @@
+name: "11-Connectivity-CI"
+on:
+  pull_request:
+    #types:
+    #  - opened
+    #  - reopened
+    #  - synchronize
+    branches:
+      - main
+    paths:
+      - "11-connectivity/**"
+  workflow_dispatch:
+
+jobs:
+  validate_and_plan:
+    name: "11-CI"
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    uses: Enterprise-Scale-Piotr/core-platform-caf-alz-public/.github/workflows/template-ci.yaml@main
+    with:
+      gh_workflow: 11-connectivity
+    secrets: inherit

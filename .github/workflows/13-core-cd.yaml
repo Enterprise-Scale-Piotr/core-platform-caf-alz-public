@@ -1,0 +1,33 @@
+name: "13-Core-CD"
+on:
+  push:
+    #types:
+    #  - opened
+    #  - reopened
+    #  - synchronize
+    branches:
+      - main
+    paths:
+      - "13-core/**"
+  workflow_dispatch:
+    inputs:
+      terraform_action:
+        description: "Terraform Action to Perform"
+        required: true
+        default: "apply"
+        type: choice
+        options:
+          - "apply"
+          - "destroy"
+
+jobs:
+  validate_and_plan:
+    name: "13-CD"
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    uses: Enterprise-Scale-Piotr/core-platform-caf-alz-public/.github/workflows/template-cd.yaml@main
+    with:
+      gh_workflow: 13-core
+    secrets: inherit

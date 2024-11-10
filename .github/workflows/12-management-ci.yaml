@@ -13,7 +13,7 @@ on:
 
 jobs:
   validate_and_plan:
-    name: "12-Management-CI"
+    name: "12-CI"
     permissions:
       id-token: write
       contents: read

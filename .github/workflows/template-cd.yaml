@@ -1,42 +1,25 @@
-
-name: '04-Management-CD'
+# ATLZ Platform Dev / reusable workflow / terraform validate & plan
+# https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'management/**'
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      terraform_action:
-        description: "Terraform Action to Perform"
+      gh_workflow:
         required: true
-        default: "apply"
-        type: choice
-        options:
-          - "apply"
-          - "destroy"
-
-permissions:
-  contents: read
+        type: string
 
 jobs:
   plan:
     name: Plan with Terraform
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
-    environment: atlz-dev-plan
+    environment: atlz-platform-dev
     defaults:
       run:
-        shell: bash
-        working-directory: './management'
-    permissions:
-      #id-token: write
-      contents: read
+        working-directory: ${{ inputs.gh_workflow }}
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_MANAGEMENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       ARM_USE_AZUREAD: true
       ARM_USE_OIDC: true
@@ -48,6 +31,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
+          terraform_version: "1.7.0" ## Better to have this configured in TF modules
           terraform_wrapper: false
 
       - name: Terraform Init
@@ -70,8 +54,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: module
-          path: ./management/
-          #path: ./management/staging/
+          path: ${{ inputs.gh_workflow }}
 
       #- name: Env Check
       #  run: pwd && ls
@@ -84,22 +67,20 @@ jobs:
     name: Apply with Terraform
     runs-on: ubuntu-latest
     #concurrency: dev-tfstate
-    environment: atlz-dev-apply
+    environment: atlz-platform-dev
     #defaults:
     #  run:
     #    shell: bash
     #    working-directory: 'management'
-    permissions:
-      #id-token: write
-      contents: read
+    #permissions:
+    #id-token: write
+    #contents: read
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_MANAGEMENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       ARM_USE_AZUREAD: true
       ARM_USE_OIDC: true
-
 
     steps:
       - name: Download a Build Artifact

@@ -12,14 +12,14 @@ jobs:
   validate:
     name: Validate Terraform
     runs-on: ubuntu-latest
-    environment: atlz-dev-plan
+    environment: atlz-platform-dev
     defaults:
       run:
         working-directory: ${{ inputs.gh_workflow }}
     env: ### Azure Workload Identity Federation Setup needed
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       #ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_MANAGEMENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       ARM_USE_AZUREAD: true
       ARM_USE_OIDC: true

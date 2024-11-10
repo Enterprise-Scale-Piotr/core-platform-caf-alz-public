@@ -30,7 +30,6 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.7.0" ## Better to have this configured in TF modules
           terraform_wrapper: false
 
       - name: Terraform Format Check

@@ -3,6 +3,7 @@
 # version and features{} block
 
 terraform {
+  required_version = "1.8.5"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"

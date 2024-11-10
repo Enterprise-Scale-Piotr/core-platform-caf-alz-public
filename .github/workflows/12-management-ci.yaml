@@ -1,4 +1,4 @@
-name: '12-Management-CI'
+name: "12-Management-CI"
 on:
   pull_request:
     #types:
@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths:
-      - "management/**"
+      - "12-management/**"
   workflow_dispatch:
 
 jobs:
@@ -20,5 +20,5 @@ jobs:
       pull-requests: write
     uses: Enterprise-Scale-Piotr/core-platform-caf-alz-public/.github/workflows/template-ci.yaml@main
     with:
-      gh_workflow: management
+      gh_workflow: 12-management
     secrets: inherit

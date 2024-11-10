@@ -12,7 +12,7 @@ jobs:
   validate:
     name: Validate Terraform
     runs-on: ubuntu-latest
-    environment: atlz-dev-plan
+    environment: atlz-platform-dev
     defaults:
       run:
         working-directory: ${{ inputs.gh_workflow }}

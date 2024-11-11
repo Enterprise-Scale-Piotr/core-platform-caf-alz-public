@@ -58,8 +58,8 @@ module "alz" {
 
   # Enable creation of the core management group hierarchy
   # and additional custom_landing_zones
-  deploy_core_landing_zones = true
-  custom_landing_zones      = local.custom_landing_zones
+  #deploy_core_landing_zones = true
+  #custom_landing_zones      = local.custom_landing_zones
 
   # Configuration settings for identity resources is
   # bundled with core as no resources are actually created

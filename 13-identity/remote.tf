@@ -1,7 +1,7 @@
 # Get the platform (connectivity, management & core) configuration
 # settings from outputs via the respective terraform
 # remote state files
-
+/*
 data "terraform_remote_state" "connectivity" {
   backend = "azurerm"
 
@@ -13,7 +13,7 @@ data "terraform_remote_state" "connectivity" {
     key                  = "connectivity.tfstate"
   }
 }
-
+*/
 data "terraform_remote_state" "management" {
   #  backend = "local"
   backend = "azurerm"
@@ -26,7 +26,7 @@ data "terraform_remote_state" "management" {
     key                  = "management.tfstate"
   }
 }
-
+/*
 data "terraform_remote_state" "core" {
   backend = "azurerm"
 
@@ -38,3 +38,4 @@ data "terraform_remote_state" "core" {
     key                  = "core.tfstate"
   }
 }
+*/

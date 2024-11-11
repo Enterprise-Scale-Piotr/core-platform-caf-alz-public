@@ -9,9 +9,9 @@ variable "root_id" {
 variable "root_name" {
   type        = string
   description = "Sets the value used for the \"intermediate root\" management group display name."
-  default     = "ALZ Core Platform"
+  default     = "ATLZ Core Platform"
 }
-
+/*
 variable "primary_location" {
   type        = string
   description = "Sets the location for \"primary\" resources to be created in."
@@ -23,7 +23,7 @@ variable "secondary_location" {
   description = "Sets the location for \"secondary\" resources to be created in."
   default     = "northeurope"
 }
-
+*/
 variable "subscription_id_identity" {
   type        = string
   description = "Subscription ID to use for \"identity\" resources."

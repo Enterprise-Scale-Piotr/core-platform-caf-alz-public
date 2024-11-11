@@ -1,4 +1,4 @@
-name: "13-Core-CD"
+name: "13-Identity-CD"
 on:
   push:
     #types:
@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths:
-      - "13-core/**"
+      - "13-identity/**"
   workflow_dispatch:
     inputs:
       terraform_action:
@@ -29,5 +29,5 @@ jobs:
       pull-requests: write
     uses: Enterprise-Scale-Piotr/core-platform-caf-alz-public/.github/workflows/template-cd.yaml@main
     with:
-      gh_workflow: 13-core
+      gh_workflow: 13-identity
     secrets: inherit

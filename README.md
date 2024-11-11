@@ -13,31 +13,50 @@ This repository contains the Infrastructure as Code (IaC) implementation of the 
 - Custom landing zones with granular policy controls
 ## Prerequisites
 - Azure Subscription(s)
-- Terraform v1.5.7 or later
+- Terraform v1.8.5 or later
 - Azure CLI
 - GitHub account for CI/CD
 ## Setup Instructions
 1. Configure Azure Storage Account for Terraform state:
-```bashaz group create --name rg-platform-tfstate --location westeuropeaz storage account create --name staplatformtfstate --resource-group rg-platform-tfstate --sku Standard_LRSaz storage container create --name platform-tfstate --account-name staplatformtfstate```
+```bash
+az group create --name rg-platform-tfstate --location westeurope
+az storage account create --name staplatformtfstate --resource-group rg-platform-tfstate --sku Standard_LRS
+az storage container create --name platform-tfstate --account-name staplatformtfstate
+```
 2. Configure GitHub Secrets:
-```AZURE_CLIENT_ID
+```
+AZURE_CLIENT_ID
 AZURE_CLIENT_SECRET
 AZURE_TENANT_ID
 AZURE_MANAGEMENT_ID
-AZURE_CONNECTIVITY_ID```
+AZURE_CONNECTIVITY_ID
+```
 3. Clone repository and initialize Terraform:
-```bashgit clone <repository-url>cd core-platform-caf-alz-publicterraform init```
+```bash
+git clone <repository-url>cd core-platform-caf-alz-public
+terraform init
+```
 ## Deployment Order
 1. Connectivity (Hub networking)
 2. Management (Log Analytics)
 3. Core (Management Groups & Policies)
 ## Usage Examples
 ### Deploy Connectivity Layer
-```bashcd connectivityterraform initterraform planterraform apply```
+```bash
+cd connectivity
+terraform init
+terraform plan
+terraform apply
+```
 ### Deploy Custom Landing ZoneUpdate core/settings.core.tf with new landing zone definition and apply:
-```bashcd coreterraform apply```
-## Repository Structure```├── .github/workflows
-# GitHub Actions CI/CD pipelines├── connectivity/
-# Network hub configuration├── management/
-# Logging and monitoring setup└── core/
-# Management groups and policies
+```bash
+cd core
+terraform apply
+```
+## Repository Structure
+```
+├── .github/workflows # GitHub Actions CI/CD pipelines
+├── connectivity/     # Network hub configuration
+├── management/       # Logging and monitoring setup
+└── core/             # Management groups and policies
+```

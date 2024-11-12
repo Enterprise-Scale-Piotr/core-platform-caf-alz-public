@@ -18,7 +18,7 @@ terraform {
     resource_group_name  = "rg-platform-tfstate"
     storage_account_name = "staplatformtfstate"
     container_name       = "platform-tfstate"
-    key                  = "core.tfstate"
+    key                  = "identity.tfstate"
   }
 }
 
@@ -35,7 +35,7 @@ data "azurerm_client_config" "current" {}
 # Declare the Azure landing zones Terraform module
 # and provide the core configuration.
 
-module "alz" {
+module "cafes" {
   # To enable correct testing of our examples, we must source this
   # module locally. Please remove the local `source = "../../../"`
   # and uncomment the remote `source` and `version` below.

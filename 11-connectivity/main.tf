@@ -37,7 +37,7 @@ data "azurerm_client_config" "current" {}
 # Declare the Azure landing zones Terraform module
 # and provide the connectivity configuration
 
-module "alz" {
+module "cafes" {
   # To enable correct testing of our examples, we must source this
   # module locally. Please remove the local `source = "../../../"`
   # and uncomment the remote `source` and `version` below.

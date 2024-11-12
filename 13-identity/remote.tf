@@ -1,4 +1,4 @@
-# Get the platform (connectivity, management & core) configuration
+# Get the platform (connectivity, management & identity) configuration
 # settings from outputs via the respective terraform
 # remote state files
 /*
@@ -35,7 +35,7 @@ data "terraform_remote_state" "core" {
     resource_group_name  = "rg-platform-tfstate"
     storage_account_name = "staplatformtfstate"
     container_name       = "platform-tfstate"
-    key                  = "core.tfstate"
+    key                  = "identity.tfstate"
   }
 }
 */
